@@ -1,9 +1,4 @@
-from src.Cell import Cell 
-
-class Column():
-    rows_total = 6
-    cells = [Cell() for r in range(rows_total)]
-
+from src.Column import Column
 
 class Board():
     columns_total = 7
