@@ -6,7 +6,8 @@ class State(Enum):
     YELLOW = 2
 
 class Cell():
-    current_state = State.EMPTY
+    def __init__(self) -> None:
+        self.current_state = State.EMPTY
 
     def is_empty(self):
         return (self.current_state == State.EMPTY)

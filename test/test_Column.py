@@ -28,3 +28,33 @@ def test_Column_add_checkers():
     assert(col.cells[0].is_red() == True)
     assert(col.cells[1].is_yellow() == True)
     assert(col.cells[2].is_red() == True)
+
+def test_Column_full_adding_checkers_ignored():
+    col = Column.Column()
+    assert(col.get_rows_empty() == 6)
+    col.add_checker_yellow()
+    col.add_checker_yellow()
+    col.add_checker_yellow()
+    col.add_checker_yellow()
+    col.add_checker_yellow()
+    col.add_checker_yellow()
+    assert(col.get_rows_empty() == 0)
+    assert(col.get_rows_yellow() == 6)
+
+    col.add_checker_yellow()
+    assert(col.get_rows_yellow() == 6)
+    col.add_checker_red()
+    assert(col.get_rows_red() == 0)
+
+def test_Column_indexes_rows():
+    col = Column.Column()
+    assert(col.indexes_rows_red() == [])
+    col.add_checker_red()
+    assert(col.indexes_rows_red() == [0])
+    col.add_checker_red()
+    assert(col.indexes_rows_red() == [0,1])
+    col.add_checker_yellow()
+    assert(col.indexes_rows_yellow() == [2])
+    col.add_checker_red()
+    assert(col.indexes_rows_red() == [0,1,3])
+
