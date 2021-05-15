@@ -1,5 +1,4 @@
 import src.Board as Board
-import src.Cell as Cell
 
 def test_Board_construction():
     board = Board.Board()

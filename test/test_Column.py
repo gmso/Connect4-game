@@ -1,5 +1,4 @@
 import src.Column as Column
-import src.Cell as Cell
 
 def test_Column_construction():
     col = Column.Column()

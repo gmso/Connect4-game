@@ -1,5 +1,10 @@
 from src.Column import Column
+from src.BoardValidator import BoardValidator
 
 class Board():
     columns_total = 7
-    columns = [Column() for c in range(columns_total)]
+
+    def __init__(self) -> None:
+        self.columns = [Column() for c in range(self.columns_total)]
+        self.validator = BoardValidator()
+    
