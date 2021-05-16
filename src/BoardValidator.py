@@ -11,6 +11,6 @@ class BoardValidator():
     def game_won(self,columns):
         return (
             self.validator_columns.connected_4_in_column(columns) or
-            self.validator_rows.connected_4_in_column(columns) or
-            self.validator_diagonals.connected_4_in_column(columns)
+            self.validator_rows.connected_4_in_row(columns) or
+            self.validator_diagonals.connected_4_in_diagonal(columns)
             )
