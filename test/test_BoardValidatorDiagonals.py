@@ -1,5 +1,22 @@
 import utility_MakeBoards as BoardMaker
+import src.Board as Board
 import src.BoardValidatorDiagonals as BoardValidatorDiagonals
 
-def test_lala():
-    board = BoardMaker.make_board_won_with_column_of_reds()
+def test_game_won_with_downwards_diagonal_of_reds():
+    validator = BoardValidatorDiagonals.BoardValidatorDiagonals()
+
+    board_empty = Board.Board()
+    assert(validator.connected_4_in_diagonal(board_empty.columns) == False)
+
+    board_won = BoardMaker.make_board_won_with_diagonal_downwards_of_reds()
+    assert(validator.connected_4_in_diagonal(board_won.columns) == True)
+
+
+def test_game_won_with_upwards_diagonal_of_yellows():
+    validator = BoardValidatorDiagonals.BoardValidatorDiagonals()
+
+    board_empty = Board.Board()
+    assert(validator.connected_4_in_diagonal(board_empty.columns) == False)
+
+    board_won = BoardMaker.make_board_won_with_diagonal_upwards_of_yellows()
+    assert(validator.connected_4_in_diagonal(board_won.columns) == True)

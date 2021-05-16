@@ -51,3 +51,24 @@ def make_board_won_with_column_of_yellows():
     board.columns[5] = make_column(["RED","RED","RED","","",""])
     return board
 
+
+def make_board_won_with_diagonal_upwards_of_yellows():
+    board = Board.Board()
+    board.columns[0] = make_column(["RED","","","","",""])
+    board.columns[1] = make_column(["YELLOW","","","","",""])
+    board.columns[2] = make_column(["YELLOW","","","","",""])
+    board.columns[3] = make_column(["RED","YELLOW","","","",""])
+    board.columns[4] = make_column(["RED","RED","YELLOW","","",""])
+    board.columns[5] = make_column(["RED","RED","RED","YELLOW","",""])
+    return board
+
+
+def make_board_won_with_diagonal_downwards_of_reds():
+    board = Board.Board()
+    board.columns[0] = make_column(["RED","YELLOW","","","",""])
+    board.columns[1] = make_column(["YELLOW","","","","",""])
+    board.columns[2] = make_column(["YELLOW","YELLOW","RED","RED","",""])
+    board.columns[3] = make_column(["RED","YELLOW","RED","","",""])
+    board.columns[4] = make_column(["RED","RED","","","",""])
+    board.columns[5] = make_column(["RED","","","","",""])
+    return board

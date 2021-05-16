@@ -5,6 +5,7 @@ class BoardValidatorColumns():
                 return True
             if self.column_has_4_consecutive_yellows(col):
                 return True
+        return False
 
     def column_has_4_consecutive_reds(self,col):
         reds = col.indexes_rows_red()
