@@ -1,7 +1,7 @@
 import utility_MakeBoards as BoardMaker
 import src.BoardValidator as BoardValidator
 import src.Board as Board
-import src.BoardValidatorColumns as BoardValidatorColumns
+import src.BoardValidatorColumns as BVC
 
 def test_BoardValidator_construction():
     validator = BoardValidator.BoardValidator()

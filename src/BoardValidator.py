@@ -1,14 +1,15 @@
-import src.BoardValidatorColumns as BoardValidatorColumns
-import src.BoardValidatorRows as BoardValidatorRows
-import src.BoardValidatorDiagonals as BoardValidatorDiagonals
+import src.BoardValidatorColumns as BVC
+import src.BoardValidatorRows as BVR
+import src.BoardValidatorDiagonals as BVD
+
 
 class BoardValidator():
     def __init__(self) -> None:
-        self.validator_columns = BoardValidatorColumns.BoardValidatorColumns()
-        self.validator_rows = BoardValidatorRows.BoardValidatorRows()
-        self.validator_diagonals = BoardValidatorDiagonals.BoardValidatorDiagonals()
+        self.validator_columns = BVC.BoardValidatorColumns()
+        self.validator_rows = BVR.BoardValidatorRows()
+        self.validator_diagonals = BVD.BoardValidatorDiagonals()
 
-    def game_won(self,columns):
+    def game_won(self, columns):
         return (
             self.validator_columns.connected_4_in_column(columns) or
             self.validator_rows.connected_4_in_row(columns) or

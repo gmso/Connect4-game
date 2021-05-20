@@ -1,9 +1,9 @@
 import utility_MakeBoards as BoardMaker
-import src.BoardValidatorColumns as BoardValidatorColumns
+import src.BoardValidatorColumns as BVC
 
 def test_game_won_with_column_of_reds():
     board = BoardMaker.make_board_won_with_column_of_reds()
-    validator = BoardValidatorColumns.BoardValidatorColumns()
+    validator = BVC.BoardValidatorColumns()
     for x in range(len(board.columns)):
         assert(validator.column_has_4_consecutive_yellows(board.columns[x]) == False)
 
@@ -21,7 +21,7 @@ def test_game_won_with_column_of_reds():
 
 def test_game_won_with_column_of_yellows():
     board = BoardMaker.make_board_won_with_column_of_yellows()
-    validator = BoardValidatorColumns.BoardValidatorColumns()
+    validator = BVC.BoardValidatorColumns()
     for x in range(len(board.columns)):
         assert(validator.column_has_4_consecutive_reds(board.columns[x]) == False)
 

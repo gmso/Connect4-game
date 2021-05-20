@@ -1,4 +1,5 @@
-from src.Cell import Cell 
+from src.Cell import Cell
+
 
 class Column():
     rows_total = 6

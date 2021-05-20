@@ -1,9 +1,9 @@
 import utility_MakeBoards as BoardMaker
 import src.Board as Board
-import src.BoardValidatorDiagonals as BoardValidatorDiagonals
+import src.BoardValidatorDiagonals as BVD
 
 def test_game_won_with_downwards_diagonal_of_reds():
-    validator = BoardValidatorDiagonals.BoardValidatorDiagonals()
+    validator = BVD.BoardValidatorDiagonals()
 
     board_empty = Board.Board()
     assert(validator.connected_4_in_diagonal(board_empty.columns) == False)
@@ -13,7 +13,7 @@ def test_game_won_with_downwards_diagonal_of_reds():
 
 
 def test_game_won_with_upwards_diagonal_of_yellows():
-    validator = BoardValidatorDiagonals.BoardValidatorDiagonals()
+    validator = BVD.BoardValidatorDiagonals()
 
     board_empty = Board.Board()
     assert(validator.connected_4_in_diagonal(board_empty.columns) == False)

@@ -1,9 +1,11 @@
 from enum import Enum
 
+
 class State(Enum):
     EMPTY = 0
     RED = 1
     YELLOW = 2
+
 
 class Cell():
     def __init__(self) -> None:
