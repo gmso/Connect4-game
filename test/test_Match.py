@@ -2,6 +2,7 @@ import src.constants as const
 import src.Match as Match
 import utility_MakeBoards as BoardMaker
 
+
 def test_Match_construction():
     match_default = Match.Match()
     assert(match_default.column_selected == 0)
@@ -37,19 +38,19 @@ def test_column_changes_match_playing():
 
     match.column_previous()
     assert(match.column_selected == 0)
-    
+
     match.column_previous()
     assert(match.column_selected == 6)
-    
+
     match.column_previous()
     assert(match.column_selected == 5)
-    
+
     match.column_previous()
     assert(match.column_selected == 3)
-    
+
     match.column_previous()
     assert(match.column_selected == 2)
-    
+
     match.column_previous()
     assert(match.column_selected == 0)
 
@@ -60,7 +61,7 @@ def test_add_checker_win_game_red():
     assert(match.state == const.MatchState.PLAYING)
     assert(match.column_selected == 0)
     assert(match.player_turn == const.PlayerTurn.RED)
-    
+
     match.add_checker()
     assert(match.state == const.MatchState.RED_WON)
 
@@ -71,7 +72,7 @@ def test_add_checker_win_game_yellow():
     assert(match.state == const.MatchState.PLAYING)
     assert(match.column_selected == 0)
     assert(match.player_turn == const.PlayerTurn.RED)
-    
+
     match.column_previous()
     assert(match.column_selected == 6)
 
@@ -81,7 +82,7 @@ def test_add_checker_win_game_yellow():
 
     match.column_previous()
     assert(match.column_selected == 5)
-    
+
     match.column_previous()
     assert(match.column_selected == 4)
 
