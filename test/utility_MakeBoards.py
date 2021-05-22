@@ -80,7 +80,19 @@ def make_board_playing_with_full_columns():
     board.columns[1] = make_column(["YELLOW","YELLOW","YELLOW","RED","RED","RED"])
     board.columns[2] = make_column(["YELLOW","","","","",""])
     board.columns[3] = make_column(["RED","","","","",""])
-    board.columns[4] = make_column(["RED","YELLOW","RED","RED","RED","YELLOW"])
+    board.columns[4] = make_column(["YELLOW","YELLOW","RED","RED","RED","YELLOW"])
     board.columns[5] = make_column(["RED","","","","",""])
     board.columns[6] = make_column(["RED","","","","",""])
+    return board
+
+
+def make_board_almost_won_both():
+    board = Board.Board()
+    board.columns[0] = make_column(["RED","RED","RED","","",""])
+    board.columns[1] = make_column(["YELLOW","","","","",""])
+    board.columns[2] = make_column(["YELLOW","","","","",""])
+    board.columns[3] = make_column(["YELLOW","","","","",""])
+    board.columns[4] = make_column(["","","","","",""])
+    board.columns[5] = make_column(["","","","","",""])
+    board.columns[6] = make_column(["","","","","",""])
     return board

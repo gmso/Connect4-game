@@ -1,4 +1,4 @@
-import src.constants as const 
+import src.constants as const
 from src.Cell import Cell
 
 
