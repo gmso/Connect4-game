@@ -72,3 +72,15 @@ def make_board_won_with_diagonal_downwards_of_reds():
     board.columns[4] = make_column(["RED","RED","","","",""])
     board.columns[5] = make_column(["RED","","","","",""])
     return board
+
+
+def make_board_playing_with_full_columns():
+    board = Board.Board()
+    board.columns[0] = make_column(["RED","","","","",""])
+    board.columns[1] = make_column(["YELLOW","YELLOW","YELLOW","RED","RED","RED"])
+    board.columns[2] = make_column(["YELLOW","","","","",""])
+    board.columns[3] = make_column(["RED","","","","",""])
+    board.columns[4] = make_column(["RED","YELLOW","RED","RED","RED","YELLOW"])
+    board.columns[5] = make_column(["RED","","","","",""])
+    board.columns[6] = make_column(["RED","","","","",""])
+    return board

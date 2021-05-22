@@ -8,7 +8,6 @@ BOARD_TOTAL_ROWS_PER_COLUMN = 6
 class PlayerTurn(Enum):
     RED = 0
     YELLOW = 1
-    NONE = 2
 
 
 class MatchState(Enum):
