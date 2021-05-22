@@ -7,6 +7,7 @@ def test_Column_construction():
     assert(col.get_rows_empty() == col.rows_total)
     assert(col.get_rows_red() == 0)
     assert(col.get_rows_yellow() == 0)
+    assert(not col.is_full())
 
 def test_Column_add_checkers():
     col = Column.Column()
@@ -31,18 +32,22 @@ def test_Column_add_checkers():
 def test_Column_full_adding_checkers_ignored():
     col = Column.Column()
     assert(col.get_rows_empty() == 6)
+    assert(not col.is_full())
     col.add_checker_yellow()
     col.add_checker_yellow()
     col.add_checker_yellow()
     col.add_checker_yellow()
     col.add_checker_yellow()
     col.add_checker_yellow()
+    assert(col.is_full())
     assert(col.get_rows_empty() == 0)
     assert(col.get_rows_yellow() == 6)
 
     col.add_checker_yellow()
+    assert(col.is_full())
     assert(col.get_rows_yellow() == 6)
     col.add_checker_red()
+    assert(col.is_full())
     assert(col.get_rows_red() == 0)
 
 def test_Column_indexes_rows():

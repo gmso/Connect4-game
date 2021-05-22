@@ -1,27 +1,21 @@
-from enum import Enum
-
-
-class State(Enum):
-    EMPTY = 0
-    RED = 1
-    YELLOW = 2
+import src.constants as const 
 
 
 class Cell():
     def __init__(self) -> None:
-        self.current_state = State.EMPTY
+        self.current_state = const.CellState.EMPTY
 
     def is_empty(self):
-        return (self.current_state == State.EMPTY)
+        return (self.current_state == const.CellState.EMPTY)
 
     def is_red(self):
-        return (self.current_state == State.RED)
+        return (self.current_state == const.CellState.RED)
 
     def is_yellow(self):
-        return (self.current_state == State.YELLOW)
+        return (self.current_state == const.CellState.YELLOW)
 
     def make_red(self):
-        self.current_state = State.RED
+        self.current_state = const.CellState.RED
 
     def make_yellow(self):
-        self.current_state = State.YELLOW
+        self.current_state = const.CellState.YELLOW

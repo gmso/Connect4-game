@@ -1,11 +1,18 @@
+import src.constants as const 
 from src.Cell import Cell
 
 
 class Column():
-    rows_total = 6
+    rows_total = const.BOARD_TOTAL_ROWS_PER_COLUMN
 
     def __init__(self) -> None:
         self.cells = [Cell() for r in range(self.rows_total)]
+
+    def is_full(self):
+        index = self.get_first_row_empty()
+        if index < self.rows_total:
+            return False
+        return True
 
     def add_checker_red(self):
         index = self.get_first_row_empty()
