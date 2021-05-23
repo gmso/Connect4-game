@@ -21,3 +21,10 @@ class CellState(Enum):
     EMPTY = 0
     RED = 1
     YELLOW = 2
+
+
+class ValidUserInput(Enum):
+    ARROW_LEFT = 0
+    ARROW_RIGHT = 1
+    ENTER = 2
+    KEY_R = 3

@@ -59,17 +59,20 @@ def test_add_checker_win_game_red():
     match = Match.Match()
     match.board = BoardMaker.make_board_almost_won_both()
     assert(match.state == const.MatchState.PLAYING)
+    assert(match.is_being_played())
     assert(match.column_selected == 0)
     assert(match.player_turn == const.PlayerTurn.RED)
 
     match.add_checker()
     assert(match.state == const.MatchState.RED_WON)
+    assert not(match.is_being_played())
 
 
 def test_add_checker_win_game_yellow():
     match = Match.Match()
     match.board = BoardMaker.make_board_almost_won_both()
     assert(match.state == const.MatchState.PLAYING)
+    assert(match.is_being_played())
     assert(match.column_selected == 0)
     assert(match.player_turn == const.PlayerTurn.RED)
 
@@ -78,6 +81,7 @@ def test_add_checker_win_game_yellow():
 
     match.add_checker()
     assert(match.state == const.MatchState.PLAYING)
+    assert(match.is_being_played())
     assert(match.player_turn == const.PlayerTurn.YELLOW)
 
     match.column_previous()
@@ -88,3 +92,4 @@ def test_add_checker_win_game_yellow():
 
     match.add_checker()
     assert(match.state == const.MatchState.YELLOW_WON)
+    assert not(match.is_being_played())

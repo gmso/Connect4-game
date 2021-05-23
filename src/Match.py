@@ -31,6 +31,9 @@ class Match():
         increment = -1
         self._column_change(increment)
 
+    def is_being_played(self):
+        return self.state == const.MatchState.PLAYING
+
     def _column_change(self, increment):
         self.column_selected += increment
 
