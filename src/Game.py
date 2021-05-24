@@ -3,9 +3,10 @@ from src.Match import Match
 
 
 class Game():
-    """Logic of connect4 game"""
+    """Logic of connect4 game."""
 
     def __init__(self) -> None:
+        """Constructor."""
         self.match = Match()
 
     def process_input(self, input):
@@ -24,7 +25,7 @@ class Game():
         return self.match.is_being_played()
 
     def _process_input_match(self, input):
-        """Switch over input executing corresponding functions."""
+        """Process user input with ongoing match."""
         switcher = {
             UserInput.ARROW_LEFT: self.match.column_previous,
             UserInput.ARROW_RIGHT: self.match.column_next,

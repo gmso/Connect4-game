@@ -11,13 +11,13 @@ class BoardValidatorColumns():
         return False
 
     def column_has_4_consecutive_reds(self, col):
-        """Return if selected column has a connect4 combination 
+        """Return if selected column has a connect4 combination
         with red checkers."""
         reds = col.indexes_rows_red()
         return self.column_has_4_consecutive_checkers(reds)
 
     def column_has_4_consecutive_yellows(self, col):
-        """Return if selected column has a connect4 combination 
+        """Return if selected column has a connect4 combination
         with yellow checkers."""
         yellows = col.indexes_rows_yellow()
         return self.column_has_4_consecutive_checkers(yellows)

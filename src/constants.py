@@ -32,3 +32,4 @@ class ValidUserInput(Enum):
     ARROW_RIGHT = 1
     ENTER = 2
     KEY_R = 3
+    OTHER = 4

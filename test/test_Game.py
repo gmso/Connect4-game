@@ -5,7 +5,7 @@ from src.Match import Match
 
 def test_Game_construction():
     game = Game()
-    assert(isinstance(game.match,Match))
+    assert(isinstance(game.match, Match))
 
 
 def test_Game_inputs():

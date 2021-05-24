@@ -35,11 +35,11 @@ class Column():
         return len([c for c in self.cells if c.is_empty()])
 
     def get_rows_red(self):
-        """Return amount of rows (cells) with red checkers in this column."""
+        """Return amount of rows with red checkers in this column."""
         return len([c for c in self.cells if c.is_red()])
 
     def get_rows_yellow(self):
-        """Return amount of rows (cells) with yellow checkers in this column."""
+        """Return amount of rows with yellow checkers in this column."""
         return len([c for c in self.cells if c.is_yellow()])
 
     def get_first_row_empty(self):
