@@ -35,4 +35,4 @@ class Game():
             UserInput.ARROW_RIGHT: self.match.column_next,
             UserInput.ENTER: self.match.add_checker
         }
-        switcher.get(input, lambda:None)()
+        switcher.get(input, lambda: None)()

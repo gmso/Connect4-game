@@ -1,6 +1,6 @@
 import os
 from rich.console import Console
-import src.constants as const 
+import src.constants as const
 
 
 class ConsoleRenderer():
@@ -9,17 +9,14 @@ class ConsoleRenderer():
     def __init__(self) -> None:
         """Constructor."""
         self.console = Console()
-        #self.char_cell_empty = ":black_circle:"
         self.char_cell_empty = "[bold grey37]•[/bold grey37]"
-        #self.char_cell_red = ":red_circle:"
         self.char_cell_red = "[bold red]•[/bold red]"
-        #self.char_cell_yellow = ":yellow_circle:"
         self.char_cell_yellow = "[bold yellow]•[/bold yellow]"
-        self.board_for_print = [ [self.char_cell_empty 
-            for i in range(const.BOARD_TOTAL_COLUMNS)]
+        self.board_for_print = [
+            [self.char_cell_empty for i in range(const.BOARD_TOTAL_COLUMNS)]
             for j in range(const.BOARD_TOTAL_ROWS_PER_COLUMN)]
-        self.col_selection = [ self.char_cell_empty 
-            for i in range(const.BOARD_TOTAL_COLUMNS)]
+        self.col_selection = [
+            self.char_cell_empty for i in range(const.BOARD_TOTAL_COLUMNS)]
         self.print_buffer = []
 
     def render(self, match):
@@ -47,9 +44,8 @@ class ConsoleRenderer():
     def _update_column_selection_for_print(self, match):
         """Make representation of selected column for printing"""
         for i in range(const.BOARD_TOTAL_COLUMNS):
-            #self.col_selection[i] = self.char_cell_empty
             self.col_selection[i] = "  "
-            if (i == match.column_selected and 
+            if (i == match.column_selected and
                     match.state == const.MatchState.PLAYING):
                 if match.player_turn == const.PlayerTurn.RED:
                     self.col_selection[i] = self.char_cell_red
@@ -68,7 +64,7 @@ class ConsoleRenderer():
             "[bold cyan]'r'[/bold cyan]  "
             "[cyan]restarts game[/cyan]")
         self.print_buffer.append(
-            "[bold cyan]← → [/bold cyan] " 
+            "[bold cyan]← → [/bold cyan] "
             "[cyan]arrows change column[/cyan]")
         self.print_buffer.append(
             "[bold cyan]←┘[/bold cyan]   "
@@ -106,7 +102,7 @@ class ConsoleRenderer():
         self.print_buffer.append(" ")
         self.print_buffer.append(" ")
         self.print_buffer.append(
-            "[grey37]made with [dark_red]♥[/dark_red] " 
+            "[grey37]made with [dark_red]♥[/dark_red] "
             "by gmso (github.com/gmso)[/grey37]")
 
     def _print_buffer(self):
@@ -115,7 +111,8 @@ class ConsoleRenderer():
 
     def _clear_console(self):
         command = 'clear'
-        if os.name in ('nt', 'dos'):  # If Machine is running on Windows, use cls
+        if os.name in ('nt', 'dos'):
+            # If Machine is running on Windows, use cls
             command = 'cls'
         os.system(command)
 

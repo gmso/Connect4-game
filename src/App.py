@@ -8,7 +8,7 @@ class App():
 
     def __init__(self) -> None:
         """Constructor."""
-        
+
         self.input = PlayerInput()
         self.game = Game()
         self.renderer = Renderer()
@@ -18,7 +18,7 @@ class App():
 
         while True:
             input_registered, key = self.input.wait_for_user_input()
-            
+
             if input_registered:
                 self.game.process_input(key)
                 self.renderer.render(self.game.match)
