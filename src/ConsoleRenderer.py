@@ -53,6 +53,7 @@ class ConsoleRenderer():
                     self.col_selection[i] = self.char_cell_yellow
 
     def _set_header(self):
+        """Add header string lines to print buffer"""
         self.print_buffer.append(" ")
         self.print_buffer.append("[bold cyan]»\tConnect4\t«[/bold cyan]")
         self.print_buffer.append(" ")
@@ -72,6 +73,7 @@ class ConsoleRenderer():
         self.print_buffer.append(" ")
 
     def _set_current_infos(self, match):
+        """Add current match information to print buffer"""
         self.print_buffer.append(" ")
         p_name = match.player_turn.name
         tag = p_name.lower()
@@ -87,18 +89,21 @@ class ConsoleRenderer():
         self.print_buffer.append(" ")
 
     def _set_column_selector(self, match):
+        """Add column selector indicator to print buffer"""
         self._update_column_selection_for_print(match)
         self.print_buffer.append(" " * 3)
         self.print_buffer[-1] += (" ".join(self.col_selection))
         self.print_buffer.append(" ")
 
     def _set_board(self, match):
+        """Add connect4 board representation to print buffer"""
         self._update_board_for_print(match.board.columns)
         for row in self.board_for_print[::-1]:
             self.print_buffer.append(" " * 3)
             self.print_buffer[-1] += ("  ".join(row))
 
     def _set_tail(self):
+        """Add tail/bottom information to print buffer"""
         self.print_buffer.append(" ")
         self.print_buffer.append(" ")
         self.print_buffer.append(
@@ -106,10 +111,12 @@ class ConsoleRenderer():
             "by gmso (github.com/gmso)[/grey37]")
 
     def _print_buffer(self):
+        """Print buffer into console"""
         for line in self.print_buffer:
             self.console.print(line)
 
     def _clear_console(self):
+        """Clear console"""
         command = 'clear'
         if os.name in ('nt', 'dos'):
             # If Machine is running on Windows, use cls
@@ -117,4 +124,5 @@ class ConsoleRenderer():
         os.system(command)
 
     def _clear_buffer(self):
+        """Clear print buffer"""
         self.print_buffer = []
