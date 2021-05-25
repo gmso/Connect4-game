@@ -16,6 +16,10 @@ class Game():
         elif self._is_match_ongoing():
             self._process_input_match(input)
 
+    def get_game_board(self):
+        """Return game board as list of Column objects"""
+        return self.match.board.columns
+
     def _reset_match(self):
         """Create a new match in default state."""
         self.match = Match()
@@ -31,4 +35,4 @@ class Game():
             UserInput.ARROW_RIGHT: self.match.column_next,
             UserInput.ENTER: self.match.add_checker
         }
-        switcher.get(input, "invalid input")()
+        switcher.get(input, lambda:None)()

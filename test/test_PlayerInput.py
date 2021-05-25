@@ -3,14 +3,14 @@ import time
 from pynput import keyboard
 from src.constants import ValidUserInput as UserInput
 from src.PlayerInput import PlayerInput
-from utility_InputKeyStrokes import press_key_repeatedly as key_repeated
+from utility_InputKeyStrokes import press_key_repeatedly as key_repeat
 
 
 def press_key_scenario(key):
     input = PlayerInput()
 
     simulated_player_input_thread = threading.Thread(
-        target=key_repeated, args=(key,))
+        target=key_repeat, args=(key,))
 
     key_not_detected_at_first = input.key_press_detected
 
