@@ -21,7 +21,7 @@ class ConsoleRenderer():
 
     def render(self, match):
         """Render/print screen seen by player, using current match"""
-        self._clear_console()
+        self.clear_console()
         self._clear_buffer()
         self._set_header()
         self._set_current_infos(match)
@@ -29,6 +29,16 @@ class ConsoleRenderer():
         self._set_board(match)
         self._set_tail()
         self._print_buffer()
+
+
+    def clear_console(self):
+        """Clear console"""
+        command = 'clear'
+        if os.name in ('nt', 'dos'):
+            # If Machine is running on Windows, use cls
+            command = 'cls'
+        os.system(command)
+
 
     def _update_board_for_print(self, columns):
         """Make board representation used for printing"""
@@ -115,13 +125,6 @@ class ConsoleRenderer():
         for line in self.print_buffer:
             self.console.print(line)
 
-    def _clear_console(self):
-        """Clear console"""
-        command = 'clear'
-        if os.name in ('nt', 'dos'):
-            # If Machine is running on Windows, use cls
-            command = 'cls'
-        os.system(command)
 
     def _clear_buffer(self):
         """Clear print buffer"""
