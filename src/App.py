@@ -20,7 +20,7 @@ class App():
 
         while self.is_app_running:
             input_registered, key = self.input.wait_for_user_input()
-            
+
             if input_registered:
                 if self._is_user_quitting(key):
                     self._quit_game()

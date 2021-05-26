@@ -1,10 +1,10 @@
-import sys
 import re
-from rich.console import Console, RenderResult
+from rich.console import Console
 from src.ConsoleRenderer import ConsoleRenderer
 from src.Match import Match
 import src.constants as const
 from utility_MakeBoards import make_board_almost_won_both as make_board
+
 
 def test_ConsoleRenderer_construction():
     renderer = ConsoleRenderer()
@@ -23,13 +23,13 @@ def test_update_board():
     match.board = make_board()
     renderer._update_board_for_print(match.board.columns)
     assert(len(renderer.board_for_print[0]) == const.BOARD_TOTAL_COLUMNS)
-    assert(len(renderer.board_for_print) == 
-                const.BOARD_TOTAL_ROWS_PER_COLUMN)
+    assert(
+        len(renderer.board_for_print) == const.BOARD_TOTAL_ROWS_PER_COLUMN)
     assert(renderer.board_for_print[0][0] == renderer.char_cell_red)
-    assert(renderer.board_for_print[0][1] == 
-                renderer.char_cell_yellow)
+    assert(
+        renderer.board_for_print[0][1] == renderer.char_cell_yellow)
     assert(renderer.board_for_print[const.BOARD_TOTAL_ROWS_PER_COLUMN - 1][0]
-                == renderer.char_cell_empty)
+           == renderer.char_cell_empty)
 
 
 def test_update_column_selection():
@@ -56,9 +56,9 @@ def test_set_current_infos():
     renderer = ConsoleRenderer()
     match = Match()
     renderer._set_current_infos(match)
-    assert(" "  == renderer.print_buffer[0])
+    assert(" " == renderer.print_buffer[0])
     assert("Turn for" in renderer.print_buffer[1])
-    assert(" "  == renderer.print_buffer[2])
+    assert(" " == renderer.print_buffer[2])
 
     renderer._clear_buffer()
     match.state = const.MatchState.TIE
@@ -125,8 +125,6 @@ def test_render(capsys):
     assert("\n" in captured.out)
     assert("Connect4" in captured.out)
 
-    #regex = re.compile(r"\].\[")
     m = re.search(r"\](.)\[", renderer.char_cell_empty)
     found_string = m.group(1)
     assert(found_string in captured.out)
-    

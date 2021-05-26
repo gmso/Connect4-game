@@ -1,5 +1,4 @@
 import threading
-import time
 from pynput import keyboard
 from src.constants import ValidUserInput as UserInput
 from src.PlayerInput import PlayerInput

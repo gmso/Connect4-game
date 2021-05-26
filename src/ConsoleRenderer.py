@@ -30,7 +30,6 @@ class ConsoleRenderer():
         self._set_tail()
         self._print_buffer()
 
-
     def clear_console(self):
         """Clear console"""
         command = 'clear'
@@ -38,7 +37,6 @@ class ConsoleRenderer():
             # If Machine is running on Windows, use cls
             command = 'cls'
         os.system(command)
-
 
     def _update_board_for_print(self, columns):
         """Make board representation used for printing"""
@@ -124,7 +122,6 @@ class ConsoleRenderer():
         """Print buffer into console"""
         for line in self.print_buffer:
             self.console.print(line)
-
 
     def _clear_buffer(self):
         """Clear print buffer"""
