@@ -28,8 +28,11 @@ class PlayerInput():
 
         if "char" in dir(key):
             # handle alphanumeric keys
-            self.key_pressed = (
-                UserInput.KEY_R if key.char == "r" else UserInput.OTHER)
+            switcher = {
+                "r": UserInput.KEY_R,
+                "q": UserInput.KEY_Q
+            }
+            self.key_pressed = switcher.get(key.char, UserInput.OTHER)
         else:
             # handle special keys
             switcher = {

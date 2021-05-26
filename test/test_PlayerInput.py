@@ -55,3 +55,12 @@ def test_key_press_r():
     assert not(before)
     assert(after)
     assert(key_detected == UserInput.KEY_R)
+
+
+def test_key_press_q():
+    key = "q"
+
+    before, after, key_detected = press_key_scenario(key)
+    assert not(before)
+    assert(after)
+    assert(key_detected == UserInput.KEY_Q)
