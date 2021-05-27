@@ -17,17 +17,21 @@ class PlayerInput():
 
         # Collect events until released
         if key_overwrite:
-            self._on_press(key_overwrite)
+            self._on_press(key_overwrite, key_overwrite)
         else:
             with keyboard.Listener(on_press=self._on_press) as listener:  # pragma: no cover
                 listener.join()  # pragma: no cover
 
         return (self.key_press_detected, self.key_pressed)
 
-    def _on_press(self, key):
+    def _on_press(self, key, key_override=None):
         """Process user input and update object variables accordingly."""
 
         self.key_press_detected = True
+
+        if key_override:
+            self.key_pressed = key_override
+            return False
 
         if "char" in dir(key):
             # handle alphanumeric keys

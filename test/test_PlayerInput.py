@@ -4,7 +4,7 @@ from utility_InputKeyStrokes import simulate_key_press
 
 
 def test_key_press_left():
-    key = keyboard.Key.left
+    key = UserInput.ARROW_LEFT
 
     before, after, key_detected = simulate_key_press(key)
     assert not(before)
@@ -13,7 +13,7 @@ def test_key_press_left():
 
 
 def test_key_press_right():
-    key = keyboard.Key.right
+    key = UserInput.ARROW_RIGHT
 
     before, after, key_detected = simulate_key_press(key)
     assert not(before)
@@ -22,7 +22,7 @@ def test_key_press_right():
 
 
 def test_key_press_enter():
-    key = keyboard.Key.enter
+    key = UserInput.ENTER
 
     before, after, key_detected = simulate_key_press(key)
     assert not(before)
@@ -31,10 +31,7 @@ def test_key_press_enter():
 
 
 def test_key_press_r():
-    class key():
-        char = "r"
-
-    before, after, key_detected = simulate_key_press(key)
+    before, after, key_detected = simulate_key_press(UserInput.KEY_R)
     assert not(before)
     assert(after)
     assert(key_detected == UserInput.KEY_R)
@@ -44,7 +41,7 @@ def test_key_press_q():
     class key():
         char = "q"
 
-    before, after, key_detected = simulate_key_press(key)
+    before, after, key_detected = simulate_key_press(UserInput.KEY_Q)
     assert not(before)
     assert(after)
     assert(key_detected == UserInput.KEY_Q)
