@@ -33,14 +33,14 @@ class PlayerInput():
             self.key_pressed = key_override
             return False
 
-        if "char" in dir(key):
+        if "char" in dir(key):  # pragma: no cover
             # handle alphanumeric keys
             switcher = {
                 "r": UserInput.KEY_R,
                 "q": UserInput.KEY_Q
             }
             self.key_pressed = switcher.get(key.char, UserInput.OTHER)
-        else:
+        else:  # pragma: no cover
             # handle special keys
             switcher = {
                 keyboard.Key.left: UserInput.ARROW_LEFT,

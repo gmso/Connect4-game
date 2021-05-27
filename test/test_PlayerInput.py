@@ -1,4 +1,3 @@
-from pynput import keyboard
 from src.constants import ValidUserInput as UserInput
 from utility_InputKeyStrokes import simulate_key_press
 
