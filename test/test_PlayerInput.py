@@ -1,12 +1,12 @@
 from pynput import keyboard
 from src.constants import ValidUserInput as UserInput
-from utility_InputKeyStrokes import press_key_scenario as press_key_scenario
+from utility_InputKeyStrokes import simulate_key_press
 
 
 def test_key_press_left():
     key = keyboard.Key.left
 
-    before, after, key_detected = press_key_scenario(key)
+    before, after, key_detected = simulate_key_press(key)
     assert not(before)
     assert(after)
     assert(key_detected == UserInput.ARROW_LEFT)
@@ -15,7 +15,7 @@ def test_key_press_left():
 def test_key_press_right():
     key = keyboard.Key.right
 
-    before, after, key_detected = press_key_scenario(key)
+    before, after, key_detected = simulate_key_press(key)
     assert not(before)
     assert(after)
     assert(key_detected == UserInput.ARROW_RIGHT)
@@ -24,25 +24,27 @@ def test_key_press_right():
 def test_key_press_enter():
     key = keyboard.Key.enter
 
-    before, after, key_detected = press_key_scenario(key)
+    before, after, key_detected = simulate_key_press(key)
     assert not(before)
     assert(after)
     assert(key_detected == UserInput.ENTER)
 
 
 def test_key_press_r():
-    key = "r"
+    class key():
+        char = "r"
 
-    before, after, key_detected = press_key_scenario(key)
+    before, after, key_detected = simulate_key_press(key)
     assert not(before)
     assert(after)
     assert(key_detected == UserInput.KEY_R)
 
 
 def test_key_press_q():
-    key = "q"
+    class key():
+        char = "q"
 
-    before, after, key_detected = press_key_scenario(key)
+    before, after, key_detected = simulate_key_press(key)
     assert not(before)
     assert(after)
     assert(key_detected == UserInput.KEY_Q)

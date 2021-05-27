@@ -9,15 +9,18 @@ class PlayerInput():
         """Constructor."""
         self._reset_object_vars()
 
-    def wait_for_user_input(self):
+    def wait_for_user_input(self, key_overwrite=None):
         """Wait for user input. Return tuple with key and flag
         to make other modules update"""
 
         self._reset_object_vars()
 
         # Collect events until released
-        with keyboard.Listener(on_press=self._on_press) as listener:
-            listener.join()
+        if key_overwrite:
+            self._on_press(key_overwrite)
+        else:
+            with keyboard.Listener(on_press=self._on_press) as listener:  # pragma: no cover
+                listener.join()  # pragma: no cover
 
         return (self.key_press_detected, self.key_pressed)
 
