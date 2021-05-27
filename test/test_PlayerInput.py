@@ -1,23 +1,6 @@
-import threading
 from pynput import keyboard
 from src.constants import ValidUserInput as UserInput
-from src.PlayerInput import PlayerInput
-from utility_InputKeyStrokes import press_key_repeatedly as key_repeat
-
-
-def press_key_scenario(key):
-    input = PlayerInput()
-
-    simulated_player_input_thread = threading.Thread(
-        target=key_repeat, args=(key,))
-
-    key_not_detected_at_first = input.key_press_detected
-
-    simulated_player_input_thread.start()
-    key_detected_after, detected_key = input.wait_for_user_input()
-    simulated_player_input_thread.join()
-
-    return (key_not_detected_at_first, key_detected_after, detected_key)
+from utility_InputKeyStrokes import press_key_scenario as press_key_scenario
 
 
 def test_key_press_left():
