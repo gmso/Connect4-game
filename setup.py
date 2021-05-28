@@ -12,12 +12,7 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/gmso/connect-4-cli",
-    packages = setuptools.find_packages(
-        where = 'src',
-        include = ['App*',],
-        exclude = ['test',]
-    ),
-    package_dir = {"":"src"},
+    packages = setuptools.find_packages(include = ['src*',]),
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
