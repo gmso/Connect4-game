@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="connect-4-cli",
-    version="0.0.2",
+    version="0.0.3",
     author="Germán Mené Santa Olaya",
     author_email="german.mene@gmail.com",
     description="A CLI implementation of the classic connect 4 game",
@@ -13,6 +13,12 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/gmso/connect-4-cli",
     packages=setuptools.find_packages(),
+    packages = setuptools.find_packages(
+        where = 'src',
+        include = ['App*',],
+        exclude = ['test',]
+    ),
+    package_dir = {"":"src"},
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
