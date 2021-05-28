@@ -13,6 +13,12 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/gmso/connect-4-cli",
     packages = setuptools.find_packages(include = ['src*',]),
+    install_requires=[
+        'rich',
+        'pynput',
+    ],
+    setup_requires=['pytest-runner', 'flake8'],
+    tests_require=['pytest','pytest-cov'],
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
