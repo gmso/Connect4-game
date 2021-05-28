@@ -1,6 +1,15 @@
-# Connect4-game
+[![Python package](https://github.com/gmso/Connect4-game/actions/workflows/python-package.yml/badge.svg)](https://github.com/gmso/Connect4-game/actions/workflows/python-package.yml)
 
-the classic 4-in-a-line game, also called connect 4, implemented with Python
+# Connect 4 CLI
+The classic 4-in-a-line game, also called connect 4, playable from the CLI or shell
 
-## Dependencies
-*pytest* for unit testing
+## Details
+This is a simple implementation of the classic connect 4 game. It can be played directly from the CLI or shell
+
+## Installation
+```
+pip install connect-4-cli
+```
+
+## How to play
+Simply use keyboard keys, as prompted in the game
