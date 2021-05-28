@@ -1,5 +1,9 @@
 from src.constants import ValidUserInput as UserInput
-from pynput import keyboard
+try:
+    from pynput import keyboard
+except ImportError:
+    class pyinput():
+        keyboard = 0
 
 
 class PlayerInput():
