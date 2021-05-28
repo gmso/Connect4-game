@@ -20,4 +20,10 @@ setuptools.setup(
         "Environment :: Console",
         "Topic :: Games/Entertainment :: Board Games"
     ],
+    entry_points={
+        "console_scripts": [
+            "connect-4-cli = src.App:main"
+        ]
+    },
+
 )
