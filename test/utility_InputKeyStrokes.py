@@ -2,7 +2,7 @@ from unittest.mock import patch
 
 def simulate_key_press(key):
 
-    patcher = patch('pynput.keyboard', 0)
+    patcher = patch('pynput.keyboard.backend(package)', lambda x: x)
     patcher.start()
 
     from src.PlayerInput import PlayerInput
