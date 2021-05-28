@@ -11,7 +11,7 @@ setuptools.setup(
     description="A CLI implementation of the classic connect 4 game",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/gmso/Connect4-game",
+    url="https://github.com/gmso/connect-4-cli",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",

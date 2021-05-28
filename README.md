@@ -1,4 +1,4 @@
-[![Python package](https://github.com/gmso/Connect4-game/actions/workflows/python-package.yml/badge.svg)](https://github.com/gmso/Connect4-game/actions/workflows/python-package.yml)
+[![Tests](https://github.com/gmso/connect-4-cli/actions/workflows/python-package.yml/badge.svg)](https://github.com/gmso/connect-4-cli/actions/workflows/python-package.yml)
 
 # Connect 4 CLI
 The classic 4-in-a-line game, also called connect 4, playable from the CLI or shell
