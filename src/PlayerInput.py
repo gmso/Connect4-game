@@ -1,9 +1,9 @@
 from src.constants import ValidUserInput as UserInput
 try:
     from pynput import keyboard
-except ImportError:
-    class pyinput():
-        keyboard = 0
+except ImportError:  # pragma: no cover
+    class pyinput():  # pragma: no cover
+        keyboard = 0  # pragma: no cover
 
 
 class PlayerInput():
@@ -23,7 +23,8 @@ class PlayerInput():
         if key_overwrite:
             self._on_press(key_overwrite, key_overwrite)
         else:
-            with keyboard.Listener(on_press=self._on_press) as listener:  # pragma: no cover
+            with keyboard.Listener(
+                    on_press=self._on_press) as listener:  # pragma: no cover
                 listener.join()  # pragma: no cover
 
         return (self.key_press_detected, self.key_pressed)
@@ -54,7 +55,7 @@ class PlayerInput():
             self.key_pressed = switcher.get(key, UserInput.OTHER)
 
         # stop listener and exit loop
-        return False
+        return False  # pragma: no cover
 
     def _reset_object_vars(self):
         """Reset object variables back to default values"""

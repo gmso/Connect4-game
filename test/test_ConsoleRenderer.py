@@ -41,6 +41,13 @@ def test_update_column_selection():
     for s in renderer.col_selection[1:]:
         assert(s == "  ")
 
+    match.player_turn = const.PlayerTurn.YELLOW
+    renderer._update_column_selection_for_print(match)
+    assert(len(renderer.col_selection) == const.BOARD_TOTAL_COLUMNS)
+    assert(renderer.col_selection[0] == renderer.char_cell_yellow)
+    for s in renderer.col_selection[1:]:
+        assert(s == "  ")
+
 
 def test_set_header():
     renderer = ConsoleRenderer()
@@ -126,5 +133,4 @@ def test_render(capsys):
     assert("Connect4" in captured.out)
 
     m = re.search(r"\](.)\[", renderer.char_cell_empty)
-    found_string = m.group(1)
-    assert(found_string in captured.out)
+    assert(m.group(1) in captured.out)

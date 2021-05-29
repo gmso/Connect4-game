@@ -37,8 +37,9 @@ class App():
 
 
 def main():
-    app = App()
-    app.run()
+    app = App()  # pragma: no cover
+    app.run()  # pragma: no cover
+
 
 if __name__ == "__main__":
-    main()    
+    main()  # pragma: no cover
