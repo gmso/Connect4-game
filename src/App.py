@@ -18,6 +18,8 @@ class App():
     def run(self):
         """Game loop."""
 
+        self.renderer.render(self.game.match)
+
         while self.is_app_running:
             input_registered, key = self.input.wait_for_user_input()
 

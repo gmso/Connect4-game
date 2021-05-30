@@ -32,7 +32,7 @@ def test_App_run():
     assert app.is_app_running
 
     def force_stop_app_run(app):
-        sleep(0.01)
+        sleep(0.05)
         app.is_app_running = False
     x = Thread(target=force_stop_app_run, args=(app,))
     x.start()
@@ -48,3 +48,16 @@ def test_App_run():
     assert not app.is_app_running
 
     patcher.stop()
+
+
+def test_render_at_start(capsys):
+    app = App()
+    assert (app.is_app_running)
+
+    app.is_app_running = False
+    app.run()
+
+    # Capture stdout output
+    captured = capsys.readouterr()
+    assert("\n" in captured.out)
+    assert("Connect4" in captured.out)

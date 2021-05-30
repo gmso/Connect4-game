@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="connect-4-cli",
-    version="0.0.8",
+    version="0.0.9",
     author="Germán Mené Santa Olaya",
     author_email="german.mene@gmail.com",
     description="A CLI implementation of the classic connect 4 game",
